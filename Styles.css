@@ -1,0 +1,183 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+.body{
+  font-family:Carter One;
+  background-color: rgba(236,126,135,0.618);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the main box  */
+.container{
+  flex-direction: column;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-image:url('images/Rectangle\ 5.png');
+  background-color: rgba(225,225,225,0.25);
+  background-blend-mode: overlay;
+  background-size:cover;
+  
+  width: 1166px;
+  height: 780px;
+  border-radius:25px ;
+  top: 94px;
+  bottom: 165px;
+}
+
+ .container {
+    transform: scale(0.6);
+  }
+/* Kawaii TodoList text  */
+.app_name{
+  margin-top: 67px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 33px;
+  flex-direction: row;
+color: #730002;
+font-family: "Carter one",cursive;
+}
+/* to do div  */
+.todo{
+  background-color: black ;
+  flex-direction: column;
+  display: flex;
+  
+}
+
+.todo_adder{
+  margin-top: -4px;
+  width: 715px;
+  height: 70px;
+  position: relative;
+  border-radius: 53px;
+  background-color: #FFD4D4;
+}
+
+/* hover effect when we place the cursor on the plus icon */
+.todo_adder :hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.adder_input{
+  width: 168px;
+  height: 42px;
+  font-size: 27px;
+  margin-top: 17px;
+  margin-left: 40px;
+  align-items: center;
+  background-color:#FFD4D4 ;
+  border: 0px;
+}
+/* changing the  font family of placeholder */
+input::placeholder{
+ font-family: "Reem kufi Ink",sans-serif;
+}
+/* succesfully added message */
+.success{
+  margin-top: 27px;
+  color: #730002;
+  opacity: 0.8;
+  font-family: "Reem kufi Ink",sans-serif;
+}
+
+.todo{
+  margin-top: 16px;
+  background-color:rgba(225,225,225,0) ;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+.tod{
+  width: 715px;
+  height: 64px;
+  border-radius: 21px;
+  background-color:#FFD4D4;
+}
+
+.text{
+  margin-top: 14px;
+  margin-left: 40px;
+  opacity: 0.4;
+  font-family: "Reem kufi Ink",sans-serif;
+}
+.add_button{
+  display: flex;
+  align-items: end;
+  margin-top: -62px;
+  margin-left: 638px;
+  border: none;
+  outline: none;
+  background-color: rgb(0, 0, 0,0);
+}
+/* plus icon  */
+.addb{
+  width:76px;
+  border-radius: 33px;
+}
+/* button div  */
+.butt{
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: -47px;
+  margin-left: 560px;
+
+  margin-right: 50px;
+}
+
+.ibutton{
+  border: none;
+  outline: none;
+  background-color: rgb(0, 0, 0,0);
+  opacity: 0.5;
+}
+
+.ibutton1{
+  border: none;
+  outline: none;
+  background-color: rgb(0, 0, 0,0);
+  
+}
+/* hover condition for the edit and delete icons */
+.ibutton :hover{
+  opacity: 0.4;
+  cursor: pointer;
+}
+.ibutton1 :hover{
+opacity: 0.4;
+  cursor: pointer;
+}
+
+.icon{
+  width:53px;
+  border-radius: 33px;
+  
+}
+
+/* tabletes decreased scasle by 0.7 */
+@media (max-width: 768px) {
+  .container {
+    transform: scale(0.7);
+    transform-origin:center;
+  }
+}
+/* for mobile  */
+@media (max-width: 480px) {
+  .container {
+    height: 1110px;
+    gap: 2rem;
+    transform: scale(0.55);
+    transform-origin:center;
+  }
+}
