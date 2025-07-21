@@ -76,3 +76,22 @@ margin-left: 40px;
   text-decoration: underline;
 
 }
+
+@media (max-width: 768px) {
+  .card {
+    transform: scale(0.7);
+    /* align-items: center; */
+    justify-content: center;
+
+    /* transform-origin:center; */
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    height: 500px;
+    width: 480px;
+    margin-left: 35px;
+    align-items: center;
+    justify-content: center;
+  }
+}
