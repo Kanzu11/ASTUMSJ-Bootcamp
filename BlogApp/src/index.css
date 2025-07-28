@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    
+}
+
+.navbar ul{
+    border-radius: 20px;
+    padding: 10px 30px;
+    display: flex;
+    
+}
+   
+.links{
+    text-decoration: none;
+    color: inherit; 
+}
+.links.active{
+    background-color:#1E1E1E ;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.navbar li{
+    padding: 10px 15px;
+    list-style: none;
+}
+
+.btn{
+    padding: 10px 20px;
+    background-color:#1E1E1E ;
+   color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80vh;
+}
+
+.container h1{
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.blog-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    gap: 9px;
+    margin-left: 27%;
+}
+
+.blog-form input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 600px;
+}
+.blog-form textarea{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 50px;
+    width: 600px;
+}
+.blog-form button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #afbac5;
+    color: white;
+    cursor: pointer ;
+    width: 300px;
+}
+.blog-form button:hover{
+    background-color: #a09494;
+}
+.blog-details-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 70px;
+    padding: 16px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+}
+
+.blog-details-title {
+    position: relative;
+    margin-top: 70px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+.home{
+    margin-top: 400px;
+}
+
+.blog-post {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+
+}
+.bookmark-btn {
+    position: absolute;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    align-self: flex-end;
+    border: none;
+}
