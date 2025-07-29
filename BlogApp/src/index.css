@@ -14,8 +14,6 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-
-    
 }
 
 .navbar ul{
@@ -62,40 +60,113 @@
     font-weight: 600;
 }
 
+.homeimg{
+    margin-top: 1300px;
+    width: 1200px;
+    border-radius: 20px;
+    
+    object-fit: cover;
+    z-index: -1;
+
+}
+.home-intro{
+    background-color: rgba(0,0,0,0.1);
+    width: 1100px;
+    bottom: 1px;
+    transform: translate(7%,-129%);
+    text-align: center;
+    color: #ffffff;
+}
+.home-intro h3{
+    text-align: left;
+}
+.home-intro h2{
+    letter-spacing: 0%;
+    text-align: left;
+    font-family: 'Irish Grover', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 600;
+}
+.home-intro p{
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 .blog-form{
+    background-color: #ffffff;
     display: flex;
     align-items: center;
+
     flex-direction: column;
-    width: 50%;
-    gap: 9px;
-    margin-left: 27%;
+    width: 550px;
+     border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    bottom: 40px;
+    gap: 19px;
+    margin-left: 24%;
+}
+.blog-form h2{
+    color: #000000;
 }
 
 .blog-form input{
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 600px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 450px;
 }
 .blog-form textarea{
-    padding: 10px;
+    padding: 50px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #ffffff;
+    border-radius: 15px;
     height: 50px;
-    width: 600px;
+    width: 450px;
 }
-.blog-form button{
-    padding: 10px;
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    gap: 350px;
+
+}
+.submit-btn{
     border: none;
-    border-radius: 5px;
-    background-color: #afbac5;
-    color: white;
-    cursor: pointer ;
-    width: 300px;
+    background-color: #000000;
+    color: #e0dada;
+    padding: 15px;
+    border-radius: 10px;
 }
+.close-btn{
+    border: none;
+    background-color: rgb(95, 5, 5);
+    color: #e0dada;
+    padding: 15px;
+    border-radius: 10px;
+}
+
 .blog-form button:hover{
     background-color: #a09494;
 }
+
 .blog-details-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -109,14 +180,12 @@
 
 .blog-details-title {
     position: relative;
-    margin-top: 70px;
+    margin-top: -120px;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
     z-index: 1;
-}
-.home{
-    margin-top: 400px;
+    
 }
 
 .blog-post {
@@ -126,12 +195,14 @@
     gap: 8px;
     padding: 16px;
     border-radius: 8px;
+    background-color: #f3f1f1;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     word-wrap: break-word;
     overflow-wrap: break-word;
     word-break: break-word;
 
 }
+
 .bookmark-btn {
     position: absolute;
     right: 10px;
@@ -142,4 +213,81 @@
     color: #555;
     align-self: flex-end;
     border: none;
+}
+
+.blog-bookmark-title {
+
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 110px;
+    z-index: 1;
+}
+
+.book-flex {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 500px;
+
+}
+
+.blog-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.blog-link:hover{
+    transform: scale(1.1);
+}
+
+.details-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+.back-btn {
+ background-color: #c4b7b7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: none;
+}
+.back-btn:hover {
+    background-color: #f5ecec;
+}
+
+.blog-details-page {
+  padding: 20px;
+  
+}
+
+.blog-details-page h1{
+    max-width: 700px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+.blog-details-page p{
+    max-width: 700px;
+   word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }

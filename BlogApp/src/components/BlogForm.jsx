@@ -3,6 +3,7 @@ import {  useNavigate } from 'react-router-dom';
 
 
 const BlogForm = () => {
+  const handleClose = () => navigate('/');
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,12 +32,20 @@ const BlogForm = () => {
   return (
     <div className='form-container'>
       <form className="blog-form" onSubmit={handleSubmit}>
+        <div className='title-form'><h2>Post a Blog</h2></div>
         <input type="text" placeholder="Title" required />
         <input type="text" placeholder="Author" required />
         <textarea placeholder="Description" required></textarea>
         <textarea placeholder="Content" required></textarea>
         <input type="date" placeholder="Created At" required />
-        <button type="submit">Submit</button>
+        <div className='buttons'>
+          <button className = "close-btn"
+          onClick={handleClose}>
+          close
+        </button>
+          <button className='submit-btn' type="submit">Submit</button>
+          
+        </div>
       </form>
     </div>
   );
