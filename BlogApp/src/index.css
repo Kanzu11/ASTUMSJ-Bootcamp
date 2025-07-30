@@ -38,7 +38,7 @@
     list-style: none;
 }
 
-.btn{
+.nav-btn{
     padding: 10px 20px;
     background-color:#1E1E1E ;
    color: #ffffff;
@@ -46,6 +46,11 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.nav-btn:hover{
+    background-color:#8d8585 ;
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -269,6 +274,17 @@
   cursor: pointer;
   color: #007bff;
   text-decoration: none;
+}
+.edit-btn{
+    background-color: #6dd770;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.edit-btn:hover{
+    background-color: #ab7c7c;
 }
 .back-btn:hover {
     background-color: #f5ecec;
