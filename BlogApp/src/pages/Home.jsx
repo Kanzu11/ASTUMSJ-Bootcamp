@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import something from '../assets/people.png'
+import arrow from '../assets/arrow.png'
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
             with Frankie Sallivan to talk about gatekeeping in product<br/>
             design and who anyone can get into this growing industry.
           </p>
+          <img className='arrowimg' src={arrow} alt="people image" />
         </div>
       </div>
       
