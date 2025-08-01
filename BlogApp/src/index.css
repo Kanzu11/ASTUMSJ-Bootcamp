@@ -310,3 +310,141 @@
     overflow-wrap: break-word;
     word-break: break-word;
 }
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-btn {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  .container h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .homeimg {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+}
+
+.home-intro {
+  position: absolute;
+  bottom: 400px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+  .arrowimg {
+    width: 100px;
+    margin: 20px auto;
+    display: block;
+  }
+
+  .home-intro {
+    width: 90%;
+    margin: 20px auto;
+    height: 300px;
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+  }
+
+  .blog-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .blog-form input,
+  .blog-form textarea {
+    width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .blog-details-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .book-flex {
+    width: 100%;
+    position: static;
+  }
+
+  .blog-details-title {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .details-actions {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .home-intro h2 {
+    font-size: 22px;
+  }
+
+  .home-intro p {
+    font-size: 14px;
+  }
+
+  .blog-details-page h1,
+  .blog-details-page p {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 10px 5px;
+  }
+
+  .form-container {
+    padding: 10px;
+  }
+
+  .blog-form textarea {
+    padding: 10px;
+    height: 100px;
+  }
+}
+
