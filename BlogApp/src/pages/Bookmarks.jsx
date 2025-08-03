@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useAtom } from 'jotai';
 import { bookmarkedAtom } from '../atoms/BookmarkJotai.jsx'
+import { Link } from 'react-router-dom';
 
 const Bookmarks = () => {
   const [bookmarked, setBookmarked] = useAtom(bookmarkedAtom);
@@ -18,6 +19,11 @@ const Bookmarks = () => {
           <p>No bookmarks found.</p>
         ) : (
           bookmarked.map((blog, index) => (
+            <Link 
+                to={`/details/${blog.id}`}
+                className="blog-link"
+                key={blog.id}
+              >
             <div className='bookmark-post' key={blog.id}>
               <h2>{index + 1}. {blog.title}</h2>
               <p>Description: {blog.description}</p>
@@ -25,6 +31,7 @@ const Bookmarks = () => {
               <p>Date: {blog.createdAt}</p>
               <hr />
             </div>
+            </Link>
           ))
         )}
       </div>

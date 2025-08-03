@@ -310,6 +310,21 @@
     overflow-wrap: break-word;
     word-break: break-word;
 }
+.show{
+  text-align: center;
+   margin-top: 1rem;
+   
+}
+.showbtn{
+  background-color: #000000;
+  padding: 10px 50px;
+  border-radius: 7px;
+  color: #ccc;
+}
+
+.showbtn:hover{
+  background-color: #c79f9f;
+}
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;

@@ -8,6 +8,8 @@ const BlogCards = () => {
     return saved ? JSON.parse(saved) : [];
   });
 
+  const [showAll, setShowAll] = useState(false);
+
   useEffect(() => {
     const storedBlogs = JSON.parse(localStorage.getItem('blogs')) || [];
     setBlogDetails(storedBlogs);
@@ -23,6 +25,8 @@ const BlogCards = () => {
     localStorage.setItem('bookmarks', JSON.stringify(updated));
   };
 
+  const displayedBlogs = showAll ? blogDetails : blogDetails.slice(0, 4);
+
   return (
     <div className='blog-details'>
       <h2 className='blog-details-title'>Recent Blog Posts</h2>
@@ -30,7 +34,7 @@ const BlogCards = () => {
         {blogDetails.length === 0 ? (
           <p>No blog posts found. Add some using the form.</p>
         ) : (
-          blogDetails.map((blog, index) => {
+          displayedBlogs.map((blog, index) => {
             const isBookmarked = bookmarked.some(b => b.id === blog.id);
             return (
               <Link 
@@ -59,6 +63,14 @@ const BlogCards = () => {
           })
         )}
       </div>
+
+      {blogDetails.length > 4 && (
+        <div className='show'>
+          <button className='showbtn' onClick={() => setShowAll(!showAll)}>
+            {showAll ? 'Show Less' : 'Show More'}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
