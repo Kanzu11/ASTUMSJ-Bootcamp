@@ -4,6 +4,7 @@ body {
   max-width: 700px;
   margin: auto;
   color: #333;
+  padding: 20px;
 }
 
 h1, h2 {
@@ -34,8 +35,8 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  margin-bottom: 12px;
 }
-
 
 button {
   display: block;
@@ -55,7 +56,8 @@ button:hover {
   background-color: #2980b9;
 }
 
-#projectList div {
+
+#projectList .project {
   background: white;
   border: 1px solid #ddd;
   padding: 15px 20px;
@@ -68,3 +70,66 @@ button:hover {
   margin-top: 0;
   color: #34495e;
 }
+
+#projectList p {
+  margin: 5px 0;
+}
+
+
+.buttons {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 13px;
+  margin: 0;
+  width: auto;
+}
+
+.delete-btn {
+  background: #c16e65;
+}
+
+.delete-btn:hover {
+  background: #ac3f33;
+}
+
+.complete-btn {
+  background: #43ab6e;
+}
+
+.complete-btn:hover {
+  background: #27ae60;
+}
+
+.update-btn {
+  background: #f39c12;
+}
+
+.update-btn:hover {
+  background: #d68910;
+}
+
+.status {
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.status.completed {
+  color: green;
+  font-weight: bold;
+}
+
+.status.ongoing {
+  color: orange;
+  font-weight: bold;
+}
+
