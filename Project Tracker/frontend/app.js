@@ -52,11 +52,12 @@ async function loadProjects() {
           </span>
         </p>
         <div class="buttons">
-          <button class="delete-btn" onclick="deleteProject('${id}')">Delete</button>
+          <button class="update-btn" onclick="updateProject('${id}', '${project.name}', '${project.description}',
+           '${status}')">Update</button>
           <button class="complete-btn" onclick="toggleStatus('${id}', '${status}')">
             ${status === 'Completed' ? 'Mark as Ongoing' : 'Mark as Complete'}
           </button>
-          <button class="update-btn" onclick="updateProject('${id}', '${project.name}', '${project.description}', '${status}')">Update</button>
+          <button class="delete-btn" onclick="deleteProject('${id}')">Delete</button>
         </div>
       `;
       projectList.appendChild(projectDiv);
