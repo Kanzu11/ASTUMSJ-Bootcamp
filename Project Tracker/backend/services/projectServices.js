@@ -1,37 +1,30 @@
-let projects = require('../data/projectData');
-const getAllProjects = () => projects;
-const getProjectById = (id) => projects.find(s => s.id === id);
+const Project = require("../models/project");
 
-const addProject = (name, description, status) => {
-const newProject = {
-id: projects.length + 1,
-name,
-description,
-status
+const getAllProjects = async () => {
+  return await Project.find();
 };
-projects.push(newProject);
-return newProject;
+const getProjectById = async (id) => {
+  return await Project.findById(id);
 };
 
-const deleteProject = (id) => {
-const initialLength = projects.length;
-projects = projects.filter(s => s.id !== id);
-return projects.length < initialLength;
+const addProject = async (name, description, status) => {
+  const newProject = new Project({ name, description, status });
+  return await newProject.save();
 };
 
-const updatedProject = (id, updatedData) =>{
+const deleteProject = async (id) => {
+  const result = await Project.findByIdAndDelete(id);
+  return result !== null;
+};
 
-    const project = projects.find(p => p.id === Number(id));
-    if(!project) return null;
-
-    Object.assign(project, updatedData);
-    return project;
-}
+const updatedProject = async (id, updatedData) => {
+  return await Project.findByIdAndUpdate(id, updatedData, { new: true });
+};
 
 module.exports = {
-getAllProjects,
-getProjectById,
-addProject,
-deleteProject,
-updatedProject
+  getAllProjects,
+  getProjectById,
+  addProject,
+  deleteProject,
+  updatedProject,
 };

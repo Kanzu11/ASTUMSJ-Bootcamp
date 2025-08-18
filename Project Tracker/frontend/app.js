@@ -1,14 +1,16 @@
+const API_BASE = 'http://localhost:5000/api/projects';
+
 document.getElementById('projectForm').addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const data = {
     name: event.target.name.value.trim(),
     description: event.target.description.value.trim(),
-    status: event.target.status.value === 'Completed' ? 'Completed' : 'Ongoing', // enforce only Ongoing or Completed
+    status: event.target.status.value === 'Completed' ? 'Completed' : 'Ongoing',
   };
 
   try {
-    const response = await fetch('http://localhost:5000/api/projects', {
+    const response = await fetch(API_BASE, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
@@ -30,7 +32,7 @@ document.getElementById('projectForm').addEventListener('submit', async (event) 
 
 async function loadProjects() {
   try {
-    const res = await fetch('http://localhost:5000/api/projects');
+    const res = await fetch(API_BASE);
     if (!res.ok) throw new Error('Failed to fetch projects');
 
     const projects = await res.json();
@@ -38,8 +40,8 @@ async function loadProjects() {
     projectList.innerHTML = '';
 
     projects.forEach(project => {
-      const id = project.id || project._id;
-      const status = project.status === 'Completed' ? 'Completed' : 'Ongoing'; // normalize
+      const id = project._id;
+      const status = project.status === 'Completed' ? 'Completed' : 'Ongoing';
 
       const projectDiv = document.createElement('div');
       projectDiv.className = 'project';
@@ -52,8 +54,7 @@ async function loadProjects() {
           </span>
         </p>
         <div class="buttons">
-          <button class="update-btn" onclick="updateProject('${id}', '${project.name}', '${project.description}',
-           '${status}')">Update</button>
+          <button class="update-btn" onclick="updateProject('${id}', '${project.name}', '${project.description}', '${status}')">Update</button>
           <button class="complete-btn" onclick="toggleStatus('${id}', '${status}')">
             ${status === 'Completed' ? 'Mark as Ongoing' : 'Mark as Complete'}
           </button>
@@ -70,12 +71,9 @@ async function loadProjects() {
 async function deleteProject(id) {
   if (!confirm('Are you sure you want to delete this project?')) return;
   try {
-    const res = await fetch(`http://localhost:5000/api/projects/${id}`, { method: 'DELETE' });
-    if (res.ok) {
-      await loadProjects();
-    } else {
-      alert('Failed to delete project');
-    }
+    const res = await fetch(`${API_BASE}/${id}`, { method: 'DELETE' });
+    if (res.ok) await loadProjects();
+    else alert('Failed to delete project');
   } catch (err) {
     console.error(err);
   }
@@ -83,18 +81,14 @@ async function deleteProject(id) {
 
 async function toggleStatus(id, currentStatus) {
   const newStatus = currentStatus === 'Completed' ? 'Ongoing' : 'Completed';
-
   try {
-    const res = await fetch(`http://localhost:5000/api/projects/${id}`, {
+    const res = await fetch(`${API_BASE}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status: newStatus }),
     });
-    if (res.ok) {
-      await loadProjects();
-    } else {
-      alert('Failed to update project status');
-    }
+    if (res.ok) await loadProjects();
+    else alert('Failed to update project status');
   } catch (err) {
     console.error(err);
   }
@@ -104,21 +98,20 @@ async function updateProject(id, currentName, currentDesc, currentStatus) {
   const name = prompt('Update Project Name:', currentName);
   const description = prompt('Update Project Description:', currentDesc);
   const status = prompt('Update Project Status (Ongoing or Completed):', currentStatus);
-
   if (!name || !description || !status) return;
 
   const normalizedStatus = status === 'Completed' ? 'Completed' : 'Ongoing';
 
   try {
-    const res = await fetch(`http://localhost:5000/api/projects/${id}`, {
+    const res = await fetch(`${API_BASE}/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, description, status: normalizedStatus }),
     });
-    if (res.ok) {
-      await loadProjects();
-    } else {
-      alert('Failed to update project');
+    if (res.ok) await loadProjects();
+    else {
+      const errorData = await res.json();
+      alert('Failed to update project: ' + (errorData.message || res.status));
     }
   } catch (err) {
     console.error(err);
